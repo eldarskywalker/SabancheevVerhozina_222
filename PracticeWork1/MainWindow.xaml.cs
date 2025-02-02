@@ -116,5 +116,19 @@ namespace PracticeWork1
             }
             return result;
         }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            var result = MessageBox.Show(
+               "Вы хотите закрыть приложение?",
+               "Вопрос",
+               MessageBoxButton.YesNo,
+               MessageBoxImage.Question);
+
+            if (result != MessageBoxResult.Yes)
+            {
+                e.Cancel = true;
+            }
+        }
     }
 }
